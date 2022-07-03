@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Componente</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+<div id="app">
+<saudacao nome="Raphael"></saudacao>
+<contador></contador>
+<contador></contador>
+<contador></contador> 
+<!-- para chamar um component tem de declarar o nome de dentro da tag com nome do component -->
+</div>
+    <script>
+        Vue.component('saudacao',{//componentens são criados passando o nome e depois as propriedades e template
+            props: ['nome'],
+            template:`
+            <div>Bom dia {{ nome }}</div>
+            `
+        })
+        Vue.component('contador',{
+            data: function(){//data tem de ser uma function no component
+                return{
+                    contador:0
+                }
+            },
+            methods: {
+                add() {
+                    this.contador++
+                },
+                decrement() {
+                    this.contador--
+                }
+            },
+            template: `
+            <div>
+                <span>{{contador}}</span>
+                <button @click="add">+1</button>
+                <button @click="decrement">-1</button>
+            </div>
+            
+            `
+
+        })
+        new Vue({
+
+            el:"#app"
+        })
+    </script>
+</body>
+</html>

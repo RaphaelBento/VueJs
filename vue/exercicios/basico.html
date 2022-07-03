@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conceitos Básicos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+<div id="app">
+<p>Bem vindo ao sistema: {{nome}}</p>
+<p>Você ocupara o cargo de: {{cargo}}</p>
+<p>Sabemos que você tem: {{idade}} anos</p>
+</div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                nome:"Raphael",
+                cargo:"Desenvolvedor",
+                idade:31
+            }
+
+        })
+    </script>
+</body>
+</html>
